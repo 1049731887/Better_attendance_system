@@ -1,0 +1,113 @@
+<html>
+
+<head>
+	<script src="jq.js"></script>
+	<style>
+		/* p,
+		h {
+			display: none;
+		} */
+
+		h {
+			font-size: 30px;
+			color: #1fb56f;
+		}
+
+		:root {
+			padding: 0.5rem 5rem;
+			background-color: black;
+		}
+
+		p {
+			width: 20vw;
+			font-size: 1.4rem;
+			background-color: #e6b13f89;
+			padding: 0.6rem;
+			margin: 0.4rem 8rem;
+			text-align: center;
+			cursor: pointer;
+			border-radius: 1vw;
+			transition: color .2s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+			animation: fast-move 4s cubic-bezier(0.03, 1.1, 1, 1) 40000000;
+			box-shadow: 8px 3px 7px 0px black;
+		}
+
+		.red {
+			color: rgb(255, 0, 0);
+		}
+
+		html {
+			background: url(./back.jpeg) center no-repeat;
+			transition-property: all;
+			transition-duration: 0.5s;
+		}
+
+		/* 定义关键帧动画 */
+		@keyframes fast-move {
+			0% {
+				transform: translate(0px);
+			}
+
+			50% {
+				transform: translate(50vw);
+			}
+
+			100% {
+				transform: translate()
+			}
+		}
+	</style>
+
+	<head>
+
+	<body>
+		<!-- <audio src="back.mp3" autoplay=true preload="auto" controls></audio> -->
+		<h>请选择 <strong>期末考如何考满分</strong> ：（下滑还有）</h>
+		<p>用力</p>
+		<p>超旁边的同学的答案</p>
+		<p>找老师帮忙考</p>
+		<p>带个手机就好啦</p>
+		<p>手势、暗号</p>
+		<p class=red><strong>我来出题！</strong></p>
+		<p id="right">认真复习</p>
+		<p>把监考老师骗走</p>
+		<p>给监考老师<s>来一巴掌</s></p>
+		<script>
+			$("p,h").hide();
+			$(document).ready(function () {
+				$("p,h").fadeIn(2000);
+				$("#right").hover(function () {
+					change();
+				})
+				$("p").click(function () {
+					var f = 0
+					// 	document.$(this).innerHTML="用力用力"
+					// 	if(f=1){$(this).innerHTML="用力用力"}
+					$(this).fadeOut(800);
+					var iSpeed = 0;
+					var sSpeed = toString(iSpeed) + 's';
+					alert(sSpeed);
+					$("p").css("animation-duration", "1s");
+				})
+				$("#right").mouseleave(function () {
+					changeback();
+				})
+				$("p[id!='right']").click(function () {
+					$(this).css("background-color", "#6d614689");
+				})
+				$("#right").click(function () {
+					autoplay = true;
+					location.href = "http://172.22.70.101:1000/teacher/#/login";
+				})
+			})
+			function change() {
+				document.getElementById("right").innerHTML = "仔细审题";
+				autoplay = true;
+			}
+			function changeback() {
+				document.getElementById("right").innerHTML = "认真复习";
+			}
+		</script>
+	</body>
+
+</html>

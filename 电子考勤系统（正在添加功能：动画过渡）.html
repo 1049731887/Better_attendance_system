@@ -1,0 +1,225 @@
+<html>
+
+<head>
+	<script src="jq.js"></script>
+	<style>
+		h {
+			font-size: 30px;
+			color: #1fb56f;
+		}
+
+		:root {
+			padding: 0.5rem 5rem;
+			background-color: black;
+		}
+
+		p {
+			font-size: 1.4rem;
+			background-color: #e6b13f89;
+			padding: 0.8rem;
+			text-align: center;
+			cursor: pointer;
+			border-radius: 1vw;
+			//transition-property:all;
+			//transition-duration:0.5s;
+		}
+
+		.red {
+			color: rgb(255, 255, 255);
+		}
+
+		#6 {
+			color: red;
+		}
+
+		html {
+			background: url(./back.jpeg) center no-repeat;
+		}
+
+		ul {
+			display: none;
+		}
+	</style>
+
+	<head>
+
+	<body>
+		<script>
+			function M() {
+				alert("不对~ 不是这个~");
+			}
+			function IN() {
+				//alert("对了~就是这个~不过~\n同学，校卡拿来！\n点 确定 提交校卡");
+				alert("没事的，蝙蝠侠说他不打你了，乖，去考勤吧~");
+				//alert("啊？啊？啊？啊？啊？啊？你怎么知道是这个？难道你有喜欢的人吗？\n啊？啊？啊？啊？不过恭喜你选对了！按确定跳转考勤！\n")
+				location.href = "http://172.22.70.101:1000/teacher/#/login"
+			}
+			function D() {
+				alert("啊？你怎么知道是这个？难道你有喜欢的人吗？\n啊？你怎么知道是这个？难道你有喜欢的人吗？\n啊？你怎么知道是这个？难道你有喜欢的人吗？\n")
+			}
+		</script>
+		<h>请选择 <strong>期末考如何考满分</strong> ：（双击正确答案）（下滑还有）</h>
+		<p src="亲亲">多跟他/她聊天</p>
+		<p>多跟他/她打招呼</p>
+		<p>先要到他/她的微信</p>
+		<p>多一起吃饭</p>
+		<p id="right">学校不让谈，不能早恋</p>
+		<p class=red)><strong>Joker</strong></p>
+		<p>事无巨细，考虑周到，换位思考</p>
+		<p>多关心ta</p>
+		<p>让ta多喝热水</p>
+
+		<!--<p id="1" ><a id="1">多跟他/她聊天</a></p>
+		<p id="2"><a id="2">多跟他/她打招呼</a></p>
+		<p id="3"><a id="3">先要到他/她的微信</a></p>
+		<p id="4"><a id="4">多一起吃饭</a></p>
+		<p id="right"><a id="right">学校不让谈，不能早恋</a></p>
+		<p class=red id="5")><a id="5"><strong>Joker</strong></a></p>
+		<p id="6"><a id="6">事无巨细，考虑周到，换位思考</a></p>
+		<p id="7"><a id="7">多关心ta</a></p>
+		<p id="8"><a id="8">让ta多喝热水</a></p>-->
+		<script>
+			$(document).ready(function () {
+				$("#right").hover(function () {
+					change();
+				})
+				$("#right").mouseleave(function () {
+					changeback();
+				})
+				//$("#right").dblclick(function () {
+				//	M();
+				//})
+				//$("#1").hover(function () {
+				//	change1();
+				//})
+				//$("#1").mouseleave(function () {
+				//	changeback1();
+				//})
+				//$("#1").dblclick(function () {
+				//	M();
+				//})
+				//$("#2").hover(function () {
+				//	change2();
+				//})
+				//$("#2").mouseleave(function () {
+				//	changeback2();
+				//})
+				//$("#2").dblclick(function () {
+				//	M();
+				//})
+				//$("#3").hover(function () {
+				//	change3();
+				//})
+				//$("#3").mouseleave(function () {
+				//	changeback3();
+				//})
+				//$("#3").dblclick(function () {
+				//	M();
+				//})
+				//$("#4").hover(function () {
+				//	change4();
+				//})
+				//$("#4").mouseleave(function () {
+				//	changeback4();
+				//})
+				//$("#4").dblclick(function () {
+				//	M();
+				//})
+				//$("#5").hover(function () {
+				//	change5();
+				//})
+				//$("#5").mouseleave(function () {
+				//	changeback5();
+				//})
+				//$("#5").dblclick(function () {
+				//	M();
+				//})
+				//$("#6").hover(function () {
+				//	change6();
+				//})
+				//$("#6").mouseleave(function () {
+				//	changeback6();
+				//})
+				//$("#6").dblclick(function () {
+				//	IN();
+				//})
+				//$("#7").hover(function () {
+				//	change7();
+				//})
+				$("#7").mouseleave(function () {
+					changeback7();
+				})
+				$("#7").dblclick(function () {
+					M();
+				})
+				$("#8").hover(function () {
+					change8();
+				})
+				$("#8").mouseleave(function () {
+					changeback8();
+				})
+				$("#8").dblclick(function () {
+					M();
+				})
+				$("p[id!='right']").dblclick(function () {
+					$(this).hide(1000);
+				})
+			})
+			function change() {
+				document.getElementById("right").innerHTML = "不行，我就要谈";
+			}
+			function changeback() {
+				document.getElementById("right").innerHTML = "学校不让谈，不能早恋";
+			}
+			function change1() {
+				document.getElementById("1").innerHTML = "亲亲";
+			}
+			function changeback1() {
+				document.getElementById("1").innerHTML = "多跟他/她聊天";
+			}
+			function change2() {
+				document.getElementById("2").innerHTML = "抱抱";
+			}
+			function changeback2() {
+				document.getElementById("2").innerHTML = "多跟他/她打招呼";
+			}
+			function change3() {
+				document.getElementById("3").innerHTML = "举高高";
+			}
+			function changeback3() {
+				document.getElementById("3").innerHTML = "先要到他/她的微信";
+			}
+			function change4() {
+				document.getElementById("4").innerHTML = "叫宝宝";
+			}
+			function changeback4() {
+				document.getElementById("4").innerHTML = "多一起吃饭";
+			}
+			function change5() {
+				document.getElementById("5").innerHTML = "小丑竟是我自己🤡";
+			}
+			function changeback5() {
+				document.getElementById("5").innerHTML = "Joker";
+			}
+			function change6() {
+				document.getElementById("6").innerHTML = "+爱胡思乱想+爱吃醋=哥谭市的常住户，扑克牌的最大数🤡";
+			}
+			function changeback6() {
+				document.getElementById("6").innerHTML = "事无巨细，考虑周到，换位思考";
+			}
+			function change7() {
+				document.getElementById("7").innerHTML = "往往只是自作多情罢了，只感动了自己🤡";
+			}
+			function changeback7() {
+				document.getElementById("7").innerHTML = "多关心ta";
+			}
+			function change8() {
+				document.getElementById("8").innerHTML = "你是个好人，可我不喜欢你🤡";
+			}
+			function changeback8() {
+				document.getElementById("8").innerHTML = "让ta多喝热水";
+			}
+		</script>
+	</body>
+
+</html>

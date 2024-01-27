@@ -1,0 +1,54 @@
+<html>
+<head>
+<style>
+h{
+	font-size:30px;
+	color:white;
+}
+:root{
+	padding:0.5rem 5rem;
+	background-color: black;
+}
+p{
+	font-size:1.4rem;
+	background-color: #8cffff;
+	padding:0.8rem;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 1vw;
+}
+button{
+	font-size:1.4rem;
+	background-color: #8cffff;
+	padding:1rem 12rem;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 1vw;
+	width:auto
+
+}
+.red{
+	color:red;
+}
+</style>
+<head>
+<body>
+<script>
+	function M(){
+	alert("猜错啦！");
+	}
+	function IN(){
+	location.href="http://172.22.70.101:1000/teacher/#/login"
+	}
+</script>
+<h onclick=M()>选择数学科代表的名字：</h>
+<br>
+<hr>
+<button type="button" onclick=M()>王瑞南</button>
+<p onclick=M()><a onclick=M()>玉瑞楠</a></p>
+<p onclick=IN()><a onclick=IN()>王瑞楠</a></p>
+<p class="red" onclick=M()><a onclick=M()>Van 瑞 ♂</a></p>
+<p onclick=M()><a onclick=M()>王锐楠</a></p>
+<p onclick=M()><a onclick=M()>王瑞暔</a></p>
+</body>
+</html>
