@@ -28,8 +28,11 @@
 			cursor: pointer;
 			border-radius: 1vw;
 			transition: color .2s cubic-bezier(0.46, 0.03, 0.52, 0.96);
-			animation: fast-move 4s cubic-bezier(0.03, 1.1, 1, 1) 40000000;
+			/* animation: fast-move 4s cubic-bezier(0.03, 1.1, 1, 1) 40000000; */
 			box-shadow: 8px 3px 7px 0px black;
+
+			/*让他有上移的动画效果*/
+			transition:all 2s;
 		}
 
 		.red {
@@ -63,7 +66,7 @@
 	<body>
 		<!-- <audio src="back.mp3" autoplay=true preload="auto" controls></audio> -->
 		<h>请选择 <strong>期末考如何考满分</strong> ：（下滑还有）</h>
-		<p>用力</p>
+		<p src="用力用力">用力</p>
 		<p>超旁边的同学的答案</p>
 		<p>找老师帮忙考</p>
 		<p>带个手机就好啦</p>
@@ -76,23 +79,29 @@
 			$("p,h").hide();
 			$(document).ready(function () {
 				$("p,h").fadeIn(2000);
+
+				// 处理鼠标悬停移开
 				$("#right").hover(function () {
 					change();
-				})
-				$("p").click(function () {
-					var f = 0
-					// 	document.$(this).innerHTML="用力用力"
-					// 	if(f=1){$(this).innerHTML="用力用力"}
-					$(this).fadeOut(800);
-					var iSpeed = 0;
-					var sSpeed = toString(iSpeed) + 's';
-					alert(sSpeed);
-					$("p").css("animation-duration", "1s");
 				})
 				$("#right").mouseleave(function () {
 					changeback();
 				})
-				$("p[id!='right']").click(function () {
+
+				$("p").click(function () {
+					var f = 0;
+					$(this).html($(this).attr("src"));
+					// document.$(this).innerHTML="用力用力"
+					// if(f=1){$(this).innerHTML="用力用力"}
+					$(this).fadeOut(800);
+					$("p:not(:first)").slideUp();
+					// var iSpeed = 0;
+					//iSpeed后面加上's'
+					// var sSpeed = toString(iSpeed) + "s";
+					// alert(sSpeed);
+					$("p").css("animation-duration", "2s");
+				})
+				$("p[id!='right']").click(function () { // 错误答案被点击
 					$(this).css("background-color", "#6d614689");
 				})
 				$("#right").click(function () {
